@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.views import View
-from database.models.teams import Team
+from pages.models.teams import Team
 
-class Home(View):
+class About(View):
 
     def get(self, request):
         teams = Team.objects.all()
-        return render(request, 'pages/home.html', {'teams': teams})
+        return render(request, 'pages/about.html', {'teams': teams})

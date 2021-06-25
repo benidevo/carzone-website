@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models.teams import Team
+from database.models.teams import Team
 from django.utils.html import format_html
-# Register your models here.
 
+# Register your models here.
 class TeamAdmin(admin.ModelAdmin):
     def thumbnail(self, object):
         return format_html('<img src='f"{object.avatar.url}"' width="40" style="border-radius: 180%">')

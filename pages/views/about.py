@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import View
-from pages.models.teams import Team
+from database.models.teams import Team
 
 class About(View):
 

@@ -43,7 +43,9 @@ INSTALLED_APPS = [
     # third party apps
 
     # local apps
+    'database',
     'pages',
+    'cars',
 ]
 
 MIDDLEWARE = [
