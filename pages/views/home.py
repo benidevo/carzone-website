@@ -7,7 +7,7 @@ class Home(View):
 
     def get(self, request):
         teams = Team.objects.all()
-        all_cars = Car.objects.all()[:4]
+        all_cars = Car.objects.all()
         featured_cars = Car.objects.filter(is_featured=True)
         context = {
             'teams': teams,
