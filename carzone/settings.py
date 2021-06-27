@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # third party apps
+    'ckeditor',
 
     # local apps
     'database',
@@ -85,7 +86,7 @@ WSGI_APPLICATION = 'carzone.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'carzone_db',
+        'NAME': 'carzoneDB',
         'USER': 'postgres',
         'PASSWORD': 'Isuru94$',
         'HOST': 'localhost',
