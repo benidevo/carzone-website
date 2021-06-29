@@ -35,7 +35,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     #local app containing admin page customization
     'pages',
-    
+
     # IMPORTANT APPS: DO NOT MODIFY ORDER
     'django.contrib.admin',
     'django.contrib.auth',
@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     # local apps
     'database',
     'cars',
+    'users',
 ]
 
 MIDDLEWARE = [

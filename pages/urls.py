@@ -3,7 +3,6 @@ from django.urls import path
 
 from pages.views.home import Home
 from pages.views.about import About
-from pages.views.cars import Cars
 from pages.views.services import Services
 from pages.views.contact import Contact
 

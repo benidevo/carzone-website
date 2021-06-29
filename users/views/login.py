@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 
-class Cars(View):
+class Login(View):
 
     def get(self, request):
-        return render(request, 'pages/cars.html')
+        return render(request, 'users/login.html')
