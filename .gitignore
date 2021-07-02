@@ -151,3 +151,4 @@ cython_debug/
 avatar/
 migrations
 static
+settings

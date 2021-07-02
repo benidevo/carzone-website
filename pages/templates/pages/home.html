@@ -129,27 +129,27 @@
                                 <div class="overlap-box">
                                     <div class="overlap-btns-area">
                                         <div class="car-magnify-gallery">
-                                            <a href="{{ car.car_image.url }}" class="overlap-btn" data-sub-html="<h4>Toyota Corolla</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
+                                            <a href="{{ car.car_image.url }}" class="overlap-btn" data-sub-html="<h4>{{ car.name }}</h4>
                                                 <i class="fa fa-expand"></i>
                                                 <img class="hidden" src="{{ car.car_image.url }}" alt="hidden-img">
                                             </a>
                                             {% if car.car_image_1 %}
-                                            <a href="{{ car.car_image_1.url }}" class="hidden" data-sub-html="<h4>Lexus GS Red Car</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
+                                            <a href="{{ car.car_image_1.url }}" class="hidden" data-sub-html="<h4>{{ car.name }}</h4>">
                                                 <img class="hidden" src="{{ car.car_image_1.url }}" alt="hidden-img">
                                             </a>
                                             {% endif %}
                                             {% if car.car_image_2 %}
-                                            <a href="{{ car.car_image_2.url }}" class="hidden" data-sub-html="<h4>2015 Porsche Cayenne</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
+                                            <a href="{{ car.car_image_2.url }}" class="hidden" data-sub-html="<h4>{{ car.name }}</h4>">
                                                 <img class="hidden" src="{{ car.car_image_2.url }}" alt="hidden-img">
                                             </a>
                                             {% endif %}
                                             {% if car.car_image_3 %}
-                                            <a href="{{ car.car_image_3.url }}" class="hidden" data-sub-html="<h4>Lamborghini Huracán</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
+                                            <a href="{{ car.car_image_3.url }}" class="hidden" data-sub-html="<h4>{{ car.name }}</h4>">
                                                 <img class="hidden" src="{{ car.car_image_3.url }}" alt="hidden-img">
                                             </a>
                                             {% endif %}
                                             {% if car.car_image_4 %}
-                                            <a href="{{ car.car_image_4.url }}" class="hidden" data-sub-html="<h4>Lamborghini Huracán</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
+                                            <a href="{{ car.car_image_4.url }}" class="hidden" data-sub-html="<h4>{{ car.name }}</h4>">
                                                 <img class="hidden" src="{{ car.car_image_4.url }}" alt="hidden-img">
                                             </a>
                                             {% endif %}
@@ -160,12 +160,10 @@
                         </div>
                         <div class="detail">
                             <h1 class="title">
-                                <a href="#">{{ car.name }}</a>
+                                <a href="{% url 'cars:car-details' car.id %}">{{ car.name }}</a>
                             </h1>
                             <div class="location">
-                                <a href="#">
-                                    <i class="flaticon-pin"></i>{{ car.city }}, {{car.state}}
-                                </a>
+                                <i class="flaticon-pin"></i>{{ car.city }}, {{car.state}}
                             </div>
                             <ul class="facilities-list clearfix">
                                 <li>{{ car.mileage | intcomma }}km</li>
@@ -193,7 +191,7 @@
 </div>
 <!-- Featured car end -->
 
-<!-- Rent car start -->
+<!-- Buy car start -->
 <div class="featured-car content-area">
     <div class="container">
         <!-- Main title -->
@@ -257,12 +255,10 @@
                     </div>
                     <div class="detail">
                         <h1 class="title">
-                            <a href="#">{{ car.name }}</a>
+                            <a href="{% url 'cars:car-details' car.id %}">{{ car.name }}</a>
                         </h1>
                         <div class="location">
-                            <a href="#">
-                                <i class="flaticon-pin"></i>{{ car.city }}, {{ car.state }}
-                            </a>
+                            <i class="flaticon-pin"></i>{{ car.city }}, {{ car.state }}
                         </div>
                     </div>
                     <div class="footer clearfix">
@@ -279,7 +275,7 @@
         </div>
     </div>
 </div>
-<!-- Rent car end -->
+<!-- Buy car end -->
 
 
 <!-- Our team start -->
@@ -297,9 +293,7 @@
                 <div class="slick-slide-item">
                     <div class="team-1">
                         <div class="photo">
-                            <a href="#">
-                                <img src="{{ member.avatar.url }}" alt="team-1" class="img-fluid">
-                            </a>
+                            <img src="{{ member.avatar.url }}" alt="team-1" class="img-fluid">
                             <div class="social-list clearfix">
                                 <a href="{{ member.facebook_link }}" target=__blank class="facebook-bg"><i class="fa fa-facebook"></i></a>
                                 <a href="{{ member.twitter_link }}" target=__blank class="twitter-bg"><i class="fa fa-twitter"></i></a>
@@ -307,7 +301,7 @@
                             </div>
                         </div>
                         <div class="details">
-                            <h4><a href="team-detail.html">{{ member.first_name }} {{ member.last_name }}</a></h4>
+                            <h4>{{ member.first_name }} {{ member.last_name }}</h4>
                             <h5>{{ member.designation }}</h5>
                         </div>
                     </div>
@@ -337,7 +331,7 @@
 <!-- Intro section end -->
 
 <!-- Car Overview Modal -->
-<div class="car-model-2">
+<!-- <div class="car-model-2">
     <div class="modal fade" id="carOverviewModal" tabindex="-1" role="dialog" aria-labelledby="carOverviewModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -408,6 +402,6 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 {% endblock content %}

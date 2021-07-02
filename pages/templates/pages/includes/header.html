@@ -18,7 +18,7 @@
                         <a href="{% url 'users:dashboard' %}" class="sign-in"><i class="fa fa-tachometer"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="javascript:{document.getElementById('logout').submit()}" class="sign-out"><i class="fa fa-sign-in"></i> Logout</a>
+                        <a href="javascript:{document.getElementById('logout').submit()}" class="sign-in"><i class="fa fa-sign-in"></i> Logout</a>
                         <form action="{% url 'users:logout' %}" method="POST" id="logout">
                             {% csrf_token %}
                             <input type="hidden">

@@ -9,5 +9,4 @@ class Logout(View):
 
     def post(self, request):
         auth.logout(request)
-        messages.success(request, 'You have beesn successfully logged out.')
         return redirect('pages:home')

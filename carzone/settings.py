@@ -27,7 +27,9 @@ SECRET_KEY = 'django-insecure-6nc@$zcd$^*r_4m^d!#brs&v%sg_(&1zia&d*-#p+a0$&26@jz
 DEBUG = True
 
 ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ["192.168.43.253"]
+# ALLOWED_HOSTS = ["192.168.43.253"]
+
+LOGIN_REDIRECT_URL = 'users:dashboard'
 
 
 # Application definition
@@ -44,6 +46,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    # providers
+    'allauth.socialaccount.providers.google',
 
     # third party apps
     'ckeditor',
@@ -52,6 +61,7 @@ INSTALLED_APPS = [
     'database',
     'cars',
     'users',
+    'contacts',
 ]
 
 MIDDLEWARE = [
@@ -158,3 +168,33 @@ from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
+
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend'
+]
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}
+
+SITE_ID = 2
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+# send emails
+EMAIL_HOST ='smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'benidevoo@gmail.com'
+EMAIL_HOST_PASSWORD = 'dvteylngponlarxe'
+EMAIL_USE_TLS = True

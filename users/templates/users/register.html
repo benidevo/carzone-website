@@ -3,6 +3,8 @@
 {% block title %} | Register {% endblock title %}
 {% block content %}
 {% load static %}
+{% load socialaccount %}
+
 
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NX5VQP"
@@ -70,8 +72,7 @@
           </div>
           <div class="clearfix"></div>
           <ul class="social-list">
-              <li><a href="#" class="facebook-bg"><i class="fa fa-facebook facebook-i"></i><span>Facebook</span></a></li>
-              <li><a href="#" class="google-bg"><i class="fa fa-google google-i"></i><span>Google</span></a></li>
+              <li><a href="{% provider_login_url 'google' %}" class="google-bg"><i class="fa fa-google google-i"></i><span>Google</span></a></li>
           </ul>
       </form>
       <p>Already a member? <a href="{% url 'users:login' %}" class="thembo"> Login here</a></p>
@@ -81,6 +82,4 @@
 </div>
 </div>
 <!-- Contact section end -->
-
-
 {% endblock content %}

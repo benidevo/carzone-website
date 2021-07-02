@@ -1,6 +1,8 @@
 from django.contrib import admin
 from database.models.teams import Team
 from database.models.cars import Car
+from database.models.contact import Contact
+from database.models.inquiries import Inquiry
 from django.utils.html import format_html
 
 # Register your models here.
@@ -27,5 +29,19 @@ class CarAdmin(admin.ModelAdmin):
     list_editable = ('is_featured',)
     list_filter = ('name', 'year', 'model')
 
+class ContactAdmin(admin.ModelAdmin):
+
+    list_display = ('id', 'customer_email', 'first_name', 'created_at')
+    list_display_links = ('id', 'customer_email', 'first_name')
+    search_fields = ('first_name', 'customer_email')
+
+class InquiryAdmin(admin.ModelAdmin):
+
+    list_display = ('id', 'email', 'name', 'created_at')
+    list_display_links = ('id', 'email')
+    search_fields = ('name', 'email')
+
 admin.site.register(Team, TeamAdmin)
 admin.site.register(Car, CarAdmin)
+admin.site.register(Contact, ContactAdmin)
+admin.site.register(Inquiry, InquiryAdmin)

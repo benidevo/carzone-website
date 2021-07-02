@@ -27,5 +27,7 @@ urlpatterns = [
     path('', include('pages.urls', namespace='pages')),
     path('cars/', include('cars.urls', namespace='cars')),
     path('accounts/', include('users.urls', namespace='accounts')),
+    path('socialaccounts/', include('allauth.urls')),
+    path('contacts/', include('contacts.urls', namespace='contacts')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
