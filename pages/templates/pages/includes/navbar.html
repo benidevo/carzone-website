@@ -44,19 +44,6 @@
                             About
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a 
-                        {% if '/services' == request.path %}
-                            class="nav-link active"
-                        {% else %}
-                            class="nav-link"
-                        {% endif %}
-                            href="{% url 'pages:services' %}">
-                            Services
-                        </a>
-                    </li>
-                    
-                    
                     <li class="nav-item dropdown">
                         <a 
                         {% if '/contact' == request.path %}

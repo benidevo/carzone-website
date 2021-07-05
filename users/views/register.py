@@ -28,16 +28,12 @@ class Register(View):
                 else:
                     user = User.objects.create_user(first_name=first_name, last_name=last_name, username=username, email=email, password=password)
                     user.save()
-                    auth.login(request, user)
+                    auth.login(request, user, backend='django.contrib.auth.backends.ModelBackend')
                     messages.success(request, 'You are now logged in')
                     return redirect('users:dashboard')
-                    user.save()
-                    messages.success(request, 'you have successfully registered')
-                    return redirect('users:login')
+                   
             
         else:
             messages.error(request,'passwords do not match')
             return redirect('users:register')
             
-        messages.error(request,'passwords do not match')
-        return redirect('users:register')

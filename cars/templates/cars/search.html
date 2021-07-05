@@ -108,8 +108,7 @@
     <div class="container">
         <!-- Main title -->
         <div class="main-title">
-            <h1>Here's your <span>Cars</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h1>Search Results</h1>
         </div>
         <div class="row">
             {% for car in cars %}
@@ -136,9 +135,6 @@
                         <div class="carbox-overlap-wrapper">
                             <div class="overlap-box">
                                 <div class="overlap-btns-area">
-                                    <a class="overlap-btn" data-toggle="modal" data-target="#carOverviewModal">
-                                        <i class="fa fa-eye-slash"></i>
-                                    </a>
                                     <div class="car-magnify-gallery">
                                         {% if car.car_image_1 %}
                                         <a href="{{ car.car_image_1.url }}" class="overlap-btn" data-sub-html="<h4>{{ car.name }}</h4>">
@@ -175,10 +171,8 @@
                         <h1 class="title">
                             <a href="{% url 'cars:car-details' car.id %}">{{ car.name }}</a>
                         </h1>
-                        <div class="location">
-                            <a href="{% url 'cars:car-details' car.id %}">
-                                <i class="flaticon-pin"></i>{{ car.city }}, {{ car.state }}
-                            </a>
+                        <div class="location" style="font-size: 16px">
+                            <i class="flaticon-pin"></i>{{ car.city }}, {{ car.state }}
                         </div>
                     </div>
                     <div class="footer clearfix">

@@ -75,7 +75,7 @@
                                 <h1 class="title">
                                     <a href="{% url 'cars:car-details' car.id %}">{{ car.name }}</a>
                                 </h1>
-                                <div class="location">
+                                <div class="location" style="font-size: 16px;">
                                     <i class="flaticon-pin"></i>{{ car.city }}, {{ car.state }}
                                 </div>
                                 <ul class="facilities-list clearfix">
@@ -132,7 +132,7 @@
                 <div class="sidebar-right">
                     <!-- Advanced search start -->
                     <div class="widget advanced-search2">
-                        <h3 class="sidebar-title">Search your desire car</h3>
+                        <h3 class="sidebar-title">Find Your Perfect Car</h3>
                         <form action="{% url 'cars:search' %}" method="">
                             <div class="form-group">
                                 <input type="text" name="keyword" placeholder="Search by name" class="form-control">
@@ -146,7 +146,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="form-control search-fields" name="location">
+                                <select class="form-control search-fields" name="city">
                                     <option selected="true" disabled="disabled">Location</option>
                                     {% for city in city_search %}
                                     <option value="{{ city }}">{{ city }}</option>
@@ -163,7 +163,7 @@
                             </div>
                             <div class="form-group">
                                 <select class="form-control search-fields" name="body_style">
-                                    <option selected="true" disabled="disabled">Select Type Of Car</option>
+                                    <option selected="true" disabled="disabled">Body Style</option>
                                     {% for body_style in body_style_search %}
                                     <option value="{{ body_style }}">{{ body_style }}</option>
                                     {% endfor %}
@@ -171,7 +171,7 @@
                             </div>
                             <div class="range-slider clearfix">
                                             <label>Price</label>
-                                            <div data-min="0" data-max="150000"  data-min-name="min_price" data-max-name="max_price" data-unit="USD" class="range-slider-ui ui-slider" aria-disabled="false"></div>
+                                            <div data-min="0" data-max="200000"  data-min-name="min_price" data-max-name="max_price" data-unit="USD" class="range-slider-ui ui-slider" aria-disabled="false"></div>
                                             <div class="clearfix"></div>
                                         </div>
                             <div class="form-group">
@@ -187,11 +187,11 @@
                         <h5 class="sidebar-title">Follow us</h5>
                         <div class="social-list clearfix">
                             <ul>
-                                <li><a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#" class="rss-bg"><i class="fa fa-rss"></i></a></li>
-                                <li><a href="#" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="https://facebook.com" target=__blank class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://twitter.com" target=__blank class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://google.com" target=__blank class="google-bg"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="https://rss.com/blog/how-do-rss-feeds-work/" target="_blank" class="rss-bg"><i class="fa fa-rss"></i></a></li>
+                                <li><a href="https://linkedin.com" target=__blank class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
                             </ul>
                         </div>
                     </div>

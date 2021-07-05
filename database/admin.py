@@ -12,8 +12,8 @@ class TeamAdmin(admin.ModelAdmin):
     
     thumbnail.short_description = 'avatar'
 
-    list_display = ('id', 'thumbnail', 'first_name', 'designation', 'created_at')
-    list_display_links = ('id', 'thumbnail', 'first_name')
+    list_display = ('thumbnail', 'first_name', 'designation', 'created_at')
+    list_display_links = ('thumbnail', 'first_name')
     search_fields = ('first_name', 'last_name', 'designation')
 
 
@@ -23,8 +23,8 @@ class CarAdmin(admin.ModelAdmin):
 
     thumbnail.short_description = 'car image'
 
-    list_display = ('id', 'thumbnail', 'name', 'model', 'year', 'mileage', 'is_featured')
-    list_display_links = ('id', 'thumbnail', 'name')
+    list_display = ('thumbnail', 'name', 'model', 'year', 'mileage', 'is_featured')
+    list_display_links = ('thumbnail', 'name')
     search_fields = ('name', 'year', 'model')
     list_editable = ('is_featured',)
     list_filter = ('name', 'year', 'model')

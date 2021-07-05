@@ -16,7 +16,7 @@ class Search(View):
         if 'keyword' in request.GET:
             keyword = request.GET['keyword']
             if keyword:
-                cars = Car.objects.filter(description__icontains=keyword)
+                cars = Car.objects.filter(name__icontains=keyword)
 
         if 'model' in request.GET:
             model = request.GET['model']
@@ -43,7 +43,7 @@ class Search(View):
             if transmission:
                 cars = Car.objects.filter(transmission__iexact=transmission)
         
-        if 'min-price' in request.GET:
+        if 'min_price' in request.GET:
             min_price = request.GET['min_price']
             max_price = request.GET['max_price']
             if max_price:

@@ -101,7 +101,7 @@ WSGI_APPLICATION = 'carzone.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'carzoneDB',
+        'NAME': 'CarZone_db',
         'USER': 'postgres',
         'PASSWORD': 'Isuru94$',
         'HOST': 'localhost',

@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 from datetime import datetime
 from ckeditor.fields import RichTextField
@@ -5,6 +6,10 @@ from multiselectfield import MultiSelectField
 from database.models.choices import *
 
 class Car(models.Model):
+    id = models.UUIDField(
+         primary_key = True,
+         default = uuid.uuid4,
+         editable = False)
     name = models.CharField(max_length=255)
     city = models.CharField(max_length=255)
     state = models.CharField(choices=state_choice, max_length=255)

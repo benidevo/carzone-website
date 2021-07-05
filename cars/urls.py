@@ -7,6 +7,6 @@ app_name = 'cars'
 
 urlpatterns = [
     path('', Cars.as_view(), name='cars'), 
-    path('<int:id>', CarDetails.as_view(), name='car-details'),
+    path('<uuid:id>', CarDetails.as_view(), name='car-details'),
     path('search', Search.as_view(), name='search'),
 ]

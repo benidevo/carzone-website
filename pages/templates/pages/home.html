@@ -14,7 +14,7 @@
                     <h3>Wow Factor Standard</h3>
                     <h5>Allow us to guide you through the innovative stress<br>
                         free approach in finding your dream car.</h5>
-                    <a href="{% url 'pages:services' %}" class="btn btn-lg btn-theme">Read more</a>
+                    <a href="{% url 'cars:cars' %}" class="btn btn-lg btn-theme">Read more</a>
                 </div>
             </div>
             <div class="carousel-item banner-max-height item-bg">
@@ -23,7 +23,7 @@
                     <h3>Explore Your Dream Car</h3>
                     <h5>Allow us to guide you through the innovative stress<br>
                         free approach in finding your dream car.</h5>
-                    <a href="{% url 'pages:services' %}" class="btn btn-lg btn-theme">Read more</a>
+                    <a href="{% url 'cars:cars' %}" class="btn btn-lg btn-theme">Read more</a>
                 </div>
             </div>
             <div class="carousel-item banner-max-height item-bg">
@@ -32,13 +32,13 @@
                     <h3>We Are Wheel</h3>
                     <h5>Allow us to guide you through the innovative stress<br>
                         free approach in finding your dream car.</h5>
-                    <a href="{% url 'pages:services' %}" class="btn btn-lg btn-theme">Read more</a>
+                    <a href="{% url 'cars:cars' %}" class="btn btn-lg btn-theme">Read more</a>
                 </div>
             </div>
         </div>
         <!-- Search box 3 start -->
         <div class="search-box-4 sb-8">
-            <form action="{% url 'cars:search' %}" method="">
+            <form action="{% url 'cars:search' %}">
                 <div class="form-group">
                     <input type="text" name="keyword" placeholder="Search by name" class="form-control">
                 </div>
@@ -51,7 +51,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <select class="form-control search-fields" name="location">
+                    <select class="form-control search-fields" name="city">
                         <option selected="true" disabled="disabled">Location</option>
                         {% for city in city_search %}
                         <option value="{{ city }}">{{ city }}</option>
@@ -68,7 +68,7 @@
                 </div>
                 <div class="form-group">
                     <select class="form-control search-fields" name="body_style">
-                        <option selected="true" disabled="disabled">Select Type Of Car</option>
+                        <option selected="true" disabled="disabled">Body Style</option>
                         {% for body_style in body_style_search %}
                         <option value="{{ body_style }}">{{ body_style }}</option>
                         {% endfor %}
@@ -76,7 +76,7 @@
                 </div>
                 <div class="range-slider clearfix">
                                 <label>Price</label>
-                                <div data-min="0" data-max="150000"  data-min-name="min_price" data-max-name="max_price" data-unit="USD" class="range-slider-ui ui-slider" aria-disabled="false"></div>
+                                <div data-min="0" data-max="200000"  data-min-name="min_price" data-max-name="max_price" data-unit="USD" class="range-slider-ui ui-slider" aria-disabled="false"></div>
                                 <div class="clearfix"></div>
                             </div>
                 <div class="form-group">
@@ -109,7 +109,6 @@
         <!-- Main title -->
         <div class="main-title">
             <h1>Featured <span>Cars</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
         <!-- Slick slider area start -->
         <div class="slick-slider-area clearfix">
@@ -130,7 +129,7 @@
                                     <div class="overlap-btns-area">
                                         <div class="car-magnify-gallery">
                                             <a href="{{ car.car_image.url }}" class="overlap-btn" data-sub-html="<h4>{{ car.name }}</h4>
-                                                <i class="fa fa-expand"></i>
+                                                <i class='fa fa-expand'></i>
                                                 <img class="hidden" src="{{ car.car_image.url }}" alt="hidden-img">
                                             </a>
                                             {% if car.car_image_1 %}
@@ -162,8 +161,8 @@
                             <h1 class="title">
                                 <a href="{% url 'cars:car-details' car.id %}">{{ car.name }}</a>
                             </h1>
-                            <div class="location">
-                                <i class="flaticon-pin"></i>{{ car.city }}, {{car.state}}
+                            <div class="location" style="font-size: 16px">
+                                <i class="flaticon-pin"></i>{{ car.city }}, {{ car.state }}
                             </div>
                             <ul class="facilities-list clearfix">
                                 <li>{{ car.mileage | intcomma }}km</li>
@@ -197,7 +196,6 @@
         <!-- Main title -->
         <div class="main-title">
             <h1>Latest <span>Cars</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
         <div class="row">
             {% for car in all_cars %}
@@ -284,7 +282,7 @@
         <!-- Main title -->
         <div class="main-title">
             <h1>Executive <span>Team</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+            <p>With a team of hihgly dedicated young leaders, we are now positioned to serve you better.</p>
         </div>
         <!-- Slick slider area start -->
         <div class="slick-slider-area clearfix">
@@ -301,7 +299,7 @@
                             </div>
                         </div>
                         <div class="details">
-                            <h4>{{ member.first_name }} {{ member.last_name }}</h4>
+                            <h5>{{ member.first_name }} {{ member.last_name }}</h5>
                             <h5>{{ member.designation }}</h5>
                         </div>
                     </div>

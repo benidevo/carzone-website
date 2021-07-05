@@ -7,7 +7,7 @@ from database.models.cars import Car
 class Cars(View):
 
     def get(self, request):
-        cars = Car.objects.all()
+        cars = Car.objects.order_by('-added_at')
         paginator = Paginator(cars, 4)
         page = request.GET.get('page')
         paged_cars = paginator.get_page(page)
