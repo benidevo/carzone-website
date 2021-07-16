@@ -66,12 +66,6 @@ INSTALLED_APPS = [
     'contacts',
 ]
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'hari1ruel',
-    'API_KEY': '177113652211722',
-    'API_SECRET': 'X6m7e4O5d7APoAy_us7vOY6LRv4'
-}
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -209,6 +203,12 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # The URL to use when referring to static files (where they will be served from)
 STATIC_URL = '/static/'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'hari1ruel',
+    'API_KEY': '177113652211722',
+    'API_SECRET': 'X6m7e4O5d7APoAy_us7vOY6LRv4'
+}
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
