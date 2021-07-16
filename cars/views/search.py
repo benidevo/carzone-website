@@ -42,12 +42,6 @@ class Search(View):
             transmission =request.GET['transmission']
             if transmission:
                 cars = Car.objects.filter(transmission__iexact=transmission)
-        
-        if 'min_price' in request.GET:
-            min_price = request.GET['min_price']
-            max_price = request.GET['max_price']
-            if max_price:
-                cars = Car.objects.filter(price__gte=min_price, price__lte=max_price)
             
 
         context = {

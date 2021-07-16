@@ -40,5 +40,5 @@ class Inquiry(View):
         )
 
         contact.save()
-        messages.success(request, 'Your rewuest has been submitted we e=will contact you shortly')
+        messages.success(request, 'Your request has been submitted we will contact you shortly')
         return redirect('/cars/'+car_id)

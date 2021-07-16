@@ -79,7 +79,7 @@
                                     <i class="flaticon-pin"></i>{{ car.city }}, {{ car.state }}
                                 </div>
                                 <ul class="facilities-list clearfix">
-                                    <li>{{ car.fuel_type }}l</li>
+                                    <li>{{ car.fuel_type }}</li>
                                     <li>{{ car.mileage | intcomma}}km</li>
                                     <li>{{ car.transmission }}</li>
                                     <li>{{ car.model }}</li>
@@ -169,11 +169,6 @@
                                     {% endfor %}
                                 </select>
                             </div>
-                            <div class="range-slider clearfix">
-                                            <label>Price</label>
-                                            <div data-min="0" data-max="200000"  data-min-name="min_price" data-max-name="max_price" data-unit="USD" class="range-slider-ui ui-slider" aria-disabled="false"></div>
-                                            <div class="clearfix"></div>
-                                        </div>
                             <div class="form-group">
                                 <button class="btn btn-block button-theme btn-md">
                                     <i class="fa fa-search"></i> Search

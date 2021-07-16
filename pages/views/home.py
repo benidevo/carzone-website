@@ -25,3 +25,4 @@ class Home(View):
         }
         
         return render(request, 'pages/home.html', context)
+        

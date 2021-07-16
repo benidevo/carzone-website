@@ -1,4 +1,3 @@
-from django import views
 from django.urls import path
 
 from pages.views.home import Home
