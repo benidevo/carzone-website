@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
+    'cloudinary',
     'django.contrib.humanize',
     'django.contrib.sites',
     'allauth',
@@ -63,6 +65,12 @@ INSTALLED_APPS = [
     'users',
     'contacts',
 ]
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'hari1ruel',
+    'API_KEY': '177113652211722',
+    'API_SECRET': 'X6m7e4O5d7APoAy_us7vOY6LRv4'
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -205,3 +213,5 @@ STATIC_URL = '/static/'
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
