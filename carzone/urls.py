@@ -30,3 +30,4 @@ urlpatterns = [
     path('contacts/', include('contacts.urls', namespace='contacts')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+handler404 = "carzone.views.page_not_found_view"
