@@ -36,7 +36,7 @@ class Inquiry(View):
             f'You have a new car inquiry for {car_name} from {first_name} {last_name}. Please login to your admin panel to view the notification',
             'benidevoo@gmail.com',
             [admin_email],
-            fail_silently=False,
+            fail_silently=True,
         )
 
         contact.save()
