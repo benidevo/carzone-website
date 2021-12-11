@@ -28,7 +28,7 @@ class Contact(View):
             message_body,
             'benidevoo@gmail.com',
             [admin_email],
-            fail_silently=False,
+            fail_silently=True,
         )
 
         inquiry = Inquiry(name=name, email=email, message=message, subject=subject, phone=phone)
