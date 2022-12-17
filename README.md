@@ -3,7 +3,6 @@
 This is a fullstack web application with full CRUD implementation. Users can register for an account and shop for cars. When they find a car, they can contact the seller and the seller will receive a notification via mail. CarZone is an online shop for buying used and new cars. Users can filter the available car listings using different parameters. More advanced features like token authentication and filter by price will be implemented in future updates to the application.
 
 
-- [Preview](https://carzone.herokuapp.com/)
 
 ![Screenshot](carzoneweb.png?raw=true "carzone website")
 
